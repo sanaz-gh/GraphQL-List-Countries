@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useLazyQuery } from "@apollo/client";
 import styles from "./Search.module.css";
 import { SEARCH_COUNTRY } from "../graphql/queries";
-import { AiFillHeart } from "react-icons/ai";
+
 
 const Search = () => {
   const [code, setCode] = useState('');
@@ -11,13 +11,6 @@ const Search = () => {
 
   const handleSearch = () => {
     search({ variables: { code: code } });
-  };
-
-  const [like, setLike] = useState(false);
-
-  const  likeHandler = () => {
-         handleLikedList(code, like);
-        setLike((like) =>!like) ;
   };
 
   return (
@@ -47,7 +40,6 @@ const Search = () => {
             </li>
              ))}
              </div>
-             <button onClick={likeHandler}><AiFillHeart color = {like ? "red" : "#e0e0e0"} fontSize="1.8rem"/></button>
             </>
             
         )}

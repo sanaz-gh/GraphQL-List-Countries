@@ -5,8 +5,6 @@ import styles from "./Countries.module.css";
 
 const Countries = () => {
 
-
-
 const [getCountries, { loading, data, error, called }] = useLazyQuery(GET_COUNTRIES);
 
 console.log({loading, data, error, called});
