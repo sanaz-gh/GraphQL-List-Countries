@@ -1,0 +1,22 @@
+.search {
+    margin-bottom: 50px;
+    padding-top: 10px;
+}
+.search button {
+    width: 510px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    background-color: #6552f4;
+    color: #e0e0e0;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+ul li {
+    border: 1px solid #6552f4;
+    padding-left: 15px;
+    padding-top: 5px;
+    width: 510px;
+    height: 40px;
+}
