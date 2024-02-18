@@ -17,7 +17,7 @@ import { gql } from "@apollo/client";
   `;
 
   const SEARCH_COUNTRY = gql`
-  query SearchQuery($code: ID!) {
+  query getSearch($code: ID!) {
     country(code: $code) {
       name,
       native,

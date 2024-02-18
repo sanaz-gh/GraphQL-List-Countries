@@ -14,7 +14,7 @@ if (error) return <h3>something went wrong!</h3>
   return (
 <div>
     <div className={styles.search}>
-        <button onClick={() => getCountries()}> Show all countries! </button>
+        <button onClick={() => getCountries()}> Show All Countries! </button>
         {loading && <h1> ...loading</h1>}
         {error && <h1> error</h1>}
         {data && (

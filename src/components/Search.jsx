@@ -9,9 +9,9 @@ const Search = () => {
 
   const [search, { loading, error, data }] = useLazyQuery(SEARCH_COUNTRY);
 
-  const handleSearch = () => {
-    search({ variables: { code: code } });
-  };
+  // const handleSearch = () => {
+  //   search({ variables: { code: code } });
+  // };
 
   return (
     <div  className={styles.search}>
@@ -21,7 +21,7 @@ const Search = () => {
         onChange={(e) => setCode(e.target.value.toUpperCase())}
         placeholder = "Enter Country Code ..."
       />
-      <button onClick={handleSearch}>Search</button>
+      <button onClick={() => search({variables: {code: code}})}>Search</button>
 
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error.message}</p>}
