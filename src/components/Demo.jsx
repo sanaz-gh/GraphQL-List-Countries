@@ -13,6 +13,12 @@ const [text, setText] = useState("");
 const [query, setQuery] = useState("");
 
 
+   const handleSearch = (e) => {
+    e.preventDefault();
+    getCountry({ variables: { code: code } });
+  };
+
+
 
 console.log({loading, data, error, called});
 
@@ -33,7 +39,7 @@ const optionsCode = [
 
     <div className={styles.searchBox}>
         <input type="text"  onChange={(e) => setText(e.target.value)} placeholder = "Select Code" value={code}  /> 
-        <button onClick={() => getCountry({variables: {code: code}})}> Get Country!</button>
+        <button onClick={handleSearch}> Get Country!</button>
         <select  className={styles.favorite}   value={code} onChange={(e)=>setCode(e.target.value)} >
          <option value="US">US</option>
          <option value="BR">BR</option>
