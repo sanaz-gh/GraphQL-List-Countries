@@ -7,11 +7,12 @@ import { GET_COUNTRY } from "../graphql/queries";
 const Search = () => {
   const [code, setCode] = useState('');
 
-  const [search, { loading, error, data }] = useLazyQuery(GET_COUNTRY);
+  const [getCountry, { loading, error, data }] = useLazyQuery(GET_COUNTRY);
 
-  // const handleSearch = () => {
-  //   search({ variables: { code: code } });
-  // };
+  const handleSearch = (e) => {
+    e.preventDefault();
+    getCountry({ variables: { code: code } });
+  };
 
   return (
     <div  className={styles.search}>
@@ -21,7 +22,7 @@ const Search = () => {
         onChange={(e) => setCode(e.target.value.toUpperCase())}
         placeholder = "Enter Country Code ..."
       />
-      <button onClick={() => search({variables: {code: code}})}>Search</button>
+      <button onClick={handleSearch}>Search</button>
 
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error.message}</p>}
