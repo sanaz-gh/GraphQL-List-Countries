@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useLazyQuery } from "@apollo/client";
 import styles from "./Search.module.css";
-import { SEARCH_COUNTRY } from "../graphql/queries";
+import { GET_COUNTRY } from "../graphql/queries";
 
 
 const Search = () => {
   const [code, setCode] = useState('');
 
-  const [search, { loading, error, data }] = useLazyQuery(SEARCH_COUNTRY);
+  const [search, { loading, error, data }] = useLazyQuery(GET_COUNTRY);
 
   // const handleSearch = () => {
   //   search({ variables: { code: code } });

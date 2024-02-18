@@ -16,8 +16,8 @@ import { gql } from "@apollo/client";
   }
   `;
 
-  const SEARCH_COUNTRY = gql`
-  query getSearch($code: ID!) {
+  const GET_COUNTRY = gql`
+  query getCountry($code: ID!) {
     country(code: $code) {
       name,
       native,
@@ -32,4 +32,4 @@ import { gql } from "@apollo/client";
   }
 `;
 
-export {SEARCH_COUNTRY, GET_COUNTRIES};
+export {GET_COUNTRY, GET_COUNTRIES};

@@ -5,11 +5,11 @@ const Layout = ({children}) => {
   return (
     <>
       <header className={styles.header}>
-        <p> Countries-List App | Using Search-Box </p>
+        <p> Countries-Search App | Using Search-Box </p>
       </header>
       {children}
       <footer className={styles.footer}>
-        <p> Developed with  <FaHeart color="red"/> by sanaz </p>
+        <p> Developed with  <FaHeart color="#6552f4" width="40px" fontSize="0.9rem"/> by sanaz </p>
       </footer>
 
     </>
