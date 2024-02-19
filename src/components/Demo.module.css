@@ -61,19 +61,20 @@
 .searchResult details li {
     list-style: none;
     display: flex;
-    margin-bottom: 15px;
-    padding-bottom: 5px;
     border-bottom: 2px solid #22262e;
 }
-
 .details {
    padding-top: 60px;
    width: 250px;
+   align-items: center;
+   justify-content: center;
 }
 .details h1, h2, h3, h4, h5 {
     border-bottom: 2px solid #22262e;
     padding-left: 10px;
     margin-left: 20px;
+    align-items: center;
+    justify-content: center;
 }
 .details h3 {
     color: #fff;
@@ -86,3 +87,6 @@
     color: #ffff;
     padding-top: 10px;
 }
+.selected {
+    background-color: yellow;
+  }

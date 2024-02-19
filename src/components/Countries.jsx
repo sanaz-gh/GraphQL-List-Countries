@@ -2,7 +2,6 @@ import React from "react";
 import { useLazyQuery } from "@apollo/client";
 import { GET_COUNTRIES } from "../graphql/queries";
 import styles from "./Countries.module.css";
-import Select from 'react-select';
 
 const Countries = () => {
 

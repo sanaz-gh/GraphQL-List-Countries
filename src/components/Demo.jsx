@@ -3,7 +3,6 @@ import { useLazyQuery } from "@apollo/client";
 import { GET_COUNTRY } from "../graphql/queries";
 import styles from "./Demo.module.css";
 import { useState } from "react";
-import Select from 'react-select';
 
 const Demo = () => {
 
@@ -18,40 +17,25 @@ const [text, setText] = useState("");
     getCountry({ variables: { code: code } });
   };
 
-
-
 console.log({loading, data, error, called});
 
 if (loading) return <h3>loading</h3>;
 if (error) return <h3>something went wrong!</h3>
-
-// const optionsCode = [
-//     { label: 'US', value: 'US' },
-//     { label: 'BR', value: 'BR' },
-//     { label: 'TR', value: 'TR' },
-//     { label: 'IR', value: 'IR' },
-//     { label: 'CA', value: 'CA' },
-//     { label: 'FR', value: 'FR' },
-//   ];
 
   return (
 <div>
     <div className={styles.searchBox}>
         <input type="text"  onChange={(e) => setText(e.target.value)} placeholder = "Select Code" value={code}  /> 
         <button  onClick={handleSearch}> Get Country!</button>
-        <select  className={styles.favorite}   value={code} onChange={(e)=>setCode(e.target.value)} >
-         <option value="US">US</option>
+        <select  className={styles.favorite}  value={code} onChange={(e)=>setCode(e.target.value)}>
          <option value="BR">BR</option>
+         <option value="US">US</option>
          <option value="TR">TR</option>
-         <option value="CA">IR</option>
+         <option value="CA">CA</option>
          <option value="FR">FR</option>
-         <option value="AK">AK</option>
+         <option value="IR">IR</option>
          <option value="JP">JP</option>
         </select>
-        
-         {/* <Select options={optionsCode}  onChange={optionsCode.map(opt => ({ label: opt, value: opt }))} 
-         isMulti /> */}
-         
         </div>
         <div className={styles.searchResult}>
         {loading && <h1> ...loading</h1>}
@@ -78,3 +62,5 @@ if (error) return <h3>something went wrong!</h3>
   )
 }
 export default Demo;
+
+
